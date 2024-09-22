@@ -40,10 +40,10 @@ int main() {
                          .count();
     std::cout << "\x1b[H";
 
-    // if (elapsedMs > 0) {
-    //   std::cout << "FPS: " << std::setfill(' ') << std::setw(3)
-    //             << 1000 / (elapsedMs - lastRenderTimestamp);
-    // }
+    if (elapsedMs > 0) {
+      std::cout << "FPS: " << std::setfill(' ') << std::setw(3)
+                << 1000 / (elapsedMs - lastRenderTimestamp);
+    }
 
     mesh.localRotation.y = 0.001 * elapsedMs;
 
@@ -53,9 +53,9 @@ int main() {
 
     for (int j = 0; j < renderTarget.height; j++) {
       for (int i = renderTarget.width - 1; i > -1; i--) {
-        // if (j == 0 && i > renderTarget.width - 8) {
-        //   continue;
-        // }
+        if (j == 0 && i > renderTarget.width - 8) {
+          continue;
+        }
 
         int index = (i + j * renderTarget.width) * 3;
 
