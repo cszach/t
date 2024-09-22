@@ -4,7 +4,7 @@ A software graphics library written in C++, originally for the terminal.
 
 ![A GIF of a rotating teapot in the terminal](teapot.gif)
 
-_Rendering the original Utah teapot (triangulated at 3348 tris) in 125 FPS._
+_Rendering the original Utah teapot (triangulated at 3488 tris) in 125 FPS._
 
 ## Example
 
