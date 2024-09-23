@@ -10476,8 +10476,18 @@ namespace t {
       0.078631,  0.800134,  -0.594644, -0.000000, 0.800000,  -0.600000,        \
       0.078631,  0.800134,  -0.594644, -0.000000, 0.873262,  -0.487251}
 
+/**
+ * The geometry of the original Utah teapot, triangulated at 3488 triangles.
+ *
+ * Note that the original Utah teapot has no bottom. The data was taken from
+ * [the official Utah Model
+ * Repository](https://users.cs.utah.edu/~dejohnso/models/teapot.html).
+ */
 class UtahTeapot : public Geometry {
 public:
+  /**
+   * Creates a new original Utah teapot geometry.
+   */
   UtahTeapot()
       : Geometry(BufferAttribute<double>(vertexBuffer, 3),
                  BufferAttribute<double>(normalBuffer, 3)) {}

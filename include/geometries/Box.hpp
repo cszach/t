@@ -82,9 +82,23 @@ namespace t {
 }
 // clang-format on
 
+/**
+ * The geometry of a cuboid (box).
+ *
+ * On creation, the box is centered on the origin and is axis-aligned.
+ */
 class Box : public Geometry {
 public:
-  Box(double width, double height, double depth)
+  /**
+   * Creates a new box geometry with the specified width, height, and depth.
+   */
+  Box(double width /**< [in] The width of the box, which is the length of the
+                      edge that is parallel to the X axis. */
+      ,
+      double height /**< [in] The height of the box, which is the length of the
+                       edge that is parallel to the Y axis. */
+      ,
+      double depth /**< [in] The depth of the box, which is the length of the edge that is parallel to the Z axis. */)
       : Geometry(BufferAttribute<double>(vertexBuffer, 3),
                  BufferAttribute<double>(normalBuffer, 3)) {
     setIndices(BufferAttribute<int>(indexBuffer, 3));
