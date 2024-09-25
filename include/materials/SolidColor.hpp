@@ -5,13 +5,21 @@
 
 namespace t {
 
+/**
+ * A material that appears in one single color and unaffected by lights.
+ */
 class SolidColor : public Material {
 public:
-  Color color;
+  Color color; /**< The color of the material. */
 
   ~SolidColor() override = default;
 
-  explicit SolidColor(Color color) : color(color) {}
+  /**
+   * Creates a new solid color material.
+   *
+   * @param _color The color of the new material.
+   */
+  explicit SolidColor(Color _color) : color(_color) {}
 
   Vector4 vertexShader(const Uniforms &uniforms,
                        const Attributes &attributes) override {
