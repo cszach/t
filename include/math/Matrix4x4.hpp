@@ -1,4 +1,5 @@
 #include "EulerRotation.hpp"
+#include "Matrix3x3.hpp"
 #include "Vector3.hpp"
 #include "Vector4.hpp"
 #include <array>
@@ -214,6 +215,10 @@ public:
     // clang-format on
 
     return (1.0 / det) * adjoint;
+  }
+
+  Matrix3x3 topLeft3x3Matrix() const {
+    return Matrix3x3(n11, n12, n13, n21, n22, n23, n31, n32, n33);
   }
 
   double operator[](std::size_t index) const { return elements.at(index); }

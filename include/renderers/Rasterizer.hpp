@@ -106,13 +106,7 @@ public:
       auto geometry = mesh.geometry;
       auto modelViewMatrix = viewMatrix * mesh.modelMatrix;
       auto normalMatrix =
-          Matrix3x3(mesh.modelMatrix.elements[0], mesh.modelMatrix.elements[1],
-                    mesh.modelMatrix.elements[2], mesh.modelMatrix.elements[4],
-                    mesh.modelMatrix.elements[5], mesh.modelMatrix.elements[6],
-                    mesh.modelMatrix.elements[8], mesh.modelMatrix.elements[9],
-                    mesh.modelMatrix.elements[10])
-              .inverse()
-              .transpose();
+          mesh.modelMatrix.topLeft3x3Matrix().inverse().transpose();
 
       if (geometry.faceIndices) {
         for (int i = 0; i < geometry.faceIndices.value().array.size(); i += 3) {
