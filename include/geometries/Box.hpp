@@ -91,14 +91,15 @@ class Box : public Geometry {
 public:
   /**
    * Creates a new box geometry with the specified width, height, and depth.
+   *
+   * For lighting calculations, it may be assumed that the width, height, and
+   * depth are in meters.
+   *
+   * @param width The width of the box.
+   * @param height The height of the box.
+   * @param depth The depth of the box.
    */
-  Box(double width /**< [in] The width of the box, which is the length of the
-                      edge that is parallel to the X axis. */
-      ,
-      double height /**< [in] The height of the box, which is the length of the
-                       edge that is parallel to the Y axis. */
-      ,
-      double depth /**< [in] The depth of the box, which is the length of the edge that is parallel to the Z axis. */)
+  Box(double width, double height, double depth)
       : Geometry(BufferAttribute<double>(vertexBuffer, 3),
                  BufferAttribute<double>(normalBuffer, 3)) {
     setIndices(BufferAttribute<int>(indexBuffer, 3));

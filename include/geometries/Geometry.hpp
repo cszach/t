@@ -8,18 +8,30 @@
 namespace t {
 
 /**
- * A base class for 3D geometries, which define the shapes of 3D objects.
+ * A base class for 3D geometries. A 3D geometry defines the shape of a 3D
+ * object.
  *
  * A 3D geometry is defined in terms of triangles (which have 3 vertices each)
  * and contains the following data:
  * - Vertex positions (**required**): the positions of the geometry's vertices,
  *   relative to its origin (or center);
  * - Vertex normals (**required**): the normal vectors of the geometry's
- *   vertices, which are usually normalized vectors pointing at the direction
- *   the corresponding vertex is facing. Used for lighting calculated;
+ *   vertices, which are vectors pointing at the direction the corresponding
+ *   vertex is facing. Used for lighting calculations;
  * - Face indices (**optional**): the indices of the vertices that make up the
  *   triangles. If this data is missing, then it is assumed that every 3
- *   consecutive indices in the vertex position buffer form a triangle.
+ *   consecutive vertices in the vertex position buffer form a triangle.
+ *
+ * Here is an example of creating a simple depth-less triangle geometry.
+```cpp
+auto vertexPositions = BufferAttribute<double>({0, 1, 0, -1, 0, 0, 1, 0, 0}, 3);
+auto vertexNormals = BufferAttribute<double>({0, 0, 1, 0, 0, 1, 0, 0, 1}, 3);
+
+auto triangleGeometry = Geometry(vertexPositions, vertexNormals);
+```
+ * In the above example, the triangle has 3 vertices at \f$(0, 1, 0), (-1, 0,
+0), (1, 0, 0)\f$. All 3 vertex normals point towards the positive Z direction
+ * on creation.
  */
 class Geometry {
 public:
@@ -53,16 +65,20 @@ public:
                                       a triangle should be drawn or not. */
 
   /**
-   * Creates a new 3D geometry.
+   * Creates a new 3D geometry with the specified vertex buffer and normal
+   * buffer.
    *
    * The new geometry will not have an index buffer by default. To set the index
    * buffer, use {@link #setIndices}.
+   *
+   * The new geometry will assume that the vertices for a front-facing triangle
+   * appear in counter-clockwise order. See {@link #frontFace}.
+   *
+   * @param _vertexPositions The vertex buffer of the new geometry.
+   * @param _vertexNormals The normal buffer of the new geometry.
    */
-  Geometry(
-      const BufferAttribute<double>
-          &_vertexPositions /**< [in] The vertex buffer of the new geometry. */,
-      const BufferAttribute<double>
-          &_vertexNormals /**< [in] The normal buffer of the new geometry. */)
+  Geometry(const BufferAttribute<double> &_vertexPositions,
+           const BufferAttribute<double> &_vertexNormals)
       : vertexPositions(_vertexPositions), vertexNormals(_vertexNormals) {}
 
   /**
@@ -70,11 +86,11 @@ public:
    *
    * Every 3 consecutive numbers in this buffer are indices of vertices that
    * form a single triangle.
+   *
+   * @param faceIndices The new index buffer of this geometry.
    */
-  void
-  setIndices(BufferAttribute<int>
-                 indices /**< [in] The new index buffer of this geometry. */) {
-    faceIndices = indices;
+  void setIndices(BufferAttribute<int> _faceIndices) {
+    faceIndices = _faceIndices;
   }
 };
 

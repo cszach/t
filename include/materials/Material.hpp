@@ -11,7 +11,8 @@ namespace t {
 
 class Material {
 public:
-  CullMode cullMode = CullMode::Back;
+  CullMode cullMode =
+      CullMode::Back; /**< The face to cull (not draw) in the render. */
   bool depthTest = true;
   bool depthWrite = true;
 

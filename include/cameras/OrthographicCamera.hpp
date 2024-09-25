@@ -11,31 +11,51 @@ namespace t {
  *
  * A typical orthographic camera instantiation might look like the following:
  *
- * ```cpp
- * const auto width = 80; // The width of the output image in pixels
- * const auto height = 24; // The height of the output image in pixels
+```cpp
+const auto camera = OrthographicCamera(width / -2, width / 2, height / 2, height
+/ -2, 0.1, 2000 );
+```
+ * …where `width` and `height` are the output image's width and height.
  *
- * const auto camera = OrthographicCamera(width / -2.0, width / 2.0, height
- * / 2.0, height / -2.0, 0.1, 2000 );
- * ```
+ * The orthographic camera will use the following {@linkplain
+ * Camera#projectionMatrix projection matrix}:
+ * \f[
+ *   \begin{bmatrix}
+ *     \frac{2}{right - left} & 0 & 0 & -\frac{right + left}{right - left} \\
+ *     0 & \frac{2}{top - bottom} & 0 & -\frac{top + bottom}{top - bottom} \\
+ *     0 & 0 & -\frac{2}{far - near} & -\frac{far + near}{far - near} \\
+ *     0 & 0 & 0 & 1
+ *   \end{bmatrix}
+ * \f]
+ *
+ * …where \f$right\f$, \f$left\f$, \f$top\f$, and \f$bottom\f$ define the
+ * camera's view frustum.
  */
 class OrthographicCamera : public Camera {
 public:
-  double left;   /**< The left plane of the view frustum. */
-  double right;  /**< The right plane of the view frustum. */
-  double top;    /**< The top plane of the view frustum. */
-  double bottom; /**< The bottom plane of the view frustum. */
-  double near;   /**< The near plane of the view frustum. */
-  double far;    /**< The far plane of the view frustum. */
+  double left;   /**< The left plane of this camera's view frustum. */
+  double right;  /**< The right plane of this camera's view frustum. */
+  double top;    /**< The top plane of this camera's view frustum. */
+  double bottom; /**< The bottom plane of this camera's view frustum. */
+  double near;   /**< The near plane of this camera's view frustum. */
+  double far;    /**< The far plane of this camera's view frustum. */
 
   /**
    * Creates a new orthographic camera with the specified planes as the [view
    * frustum](https://en.wikipedia.org/wiki/Viewing_frustum).
    *
-   * The view frustum of the orthographic camera is in the shape of a cuboid.
-   * Only objects in this cuboid may appear in the render.
+   * The view frustum of the orthographic camera is in the shape of a box. Only
+   * objects in this box may appear in the render.
    *
-   * The planes should be set such that `_right` > `_left` and `_top > _bottom`.
+   * The planes should be set such that \f$right > left\f$ and
+   * \f$top > bottom\f$.
+   *
+   * @param _left The left plane of the new camera's view frustum.
+   * @param _right The right plane of the new camera's view frustum.
+   * @param _top The top plane of the new camera's view frustum.
+   * @param _bottom The bottom plane of the new camera's view frustum.
+   * @param _near The near plane of the new camera's view frustum.
+   * @param _far The far plane of the new camera's view frustum.
    */
   OrthographicCamera(double _left, double _right, double _top, double _bottom,
                      double _near, double _far)

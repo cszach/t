@@ -9,9 +9,18 @@ namespace t {
 /**
  * A light that illuminates all objects in the scene equally.
  *
+ * Ambient lighting is used in many ways, such as providing a base level of
+ * illumination in a dark scene where you don't want the scene to be completely
+ * dark. It is also a component of the [Phong reflection
+ * model](https://en.wikipedia.org/wiki/Phong_reflection_model).
+ *
  * For the {@link BlinnPhong} material, the light's color contribution will be
- * the 3D object's color multiplied by the light's color multiplied by the
- * light's intensity. The light's intensity is unitless.
+ * \f$color = color_{object} \times color_{light} \times intensity\f$ where:
+ * - \f$color\f$ is the light's color contribution to the object's appearance;
+ * - \f$color_{object}\f$ is the {@linkplain BlinnPhong#color material's color};
+ * - \f$color_{light}\f$ is {@linkplain #color the color of the ambient light};
+ * - \f$intensity\f$ is {@linkplain #intensity the intensity of the ambient
+ * light}.
  */
 class AmbientLight : public Light {
 public:
@@ -20,11 +29,13 @@ public:
 
   /**
    * Creates a new ambient light with the specified color and intensity.
+   *
+   * @param _color The color of the new ambient light.
+   * @param _intensity The intensity of the new ambient light. `0` means the
+   * ambient light will have no effect. `1` means full intensity.
    */
-  AmbientLight(
-      Color color /**< [in] The color of the new ambient light. */,
-      double intensity /**< [in] The intensity of the new ambient light. */)
-      : color(color), intensity(intensity) {};
+  AmbientLight(Color _color, double _intensity)
+      : color(_color), intensity(_intensity) {};
 
   /**
    * Returns whether or not this light is an ambient light.

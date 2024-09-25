@@ -36,10 +36,16 @@ namespace t {
 class Plane : public Geometry {
 public:
   /**
-   * Creates a new plane geometry with the specified width and height.
+   * Creates a new plane geometry with the specified width and height centered
+   * on the origin and faces towards the positive Z direction.
+   *
+   * For lighting calculations, it may be assumed that the width and height are
+   * in meters.
+   *
+   * @param width The width of the plane.
+   * @param height The height of the plane.
    */
-  Plane(double width /**< [in] The width of the plane along the X axis. */,
-        double height /**< The height of the plane along the Y axis. */)
+  Plane(double width, double height)
       : Geometry(BufferAttribute<double>(vertexBuffer, 3),
                  BufferAttribute<double>(normalBuffer, 3)) {
     setIndices(BufferAttribute<int>(indexBuffer, 3));
