@@ -6,14 +6,27 @@
 
 namespace t {
 
+/**
+ * A shiny material that uses the [Blinn-Phong reflection
+ * model](https://en.wikipedia.org/wiki/Blinn%E2%80%93Phong_reflection_model).
+ */
 class BlinnPhong : public Material {
 public:
-  Color color;
-  Color specularColor;
-  double shininess;
+  Color diffuseColor;  /**< The base color of the material. */
+  Color specularColor; /**< The color of the specular highlights. */
+  double shininess;    /**< The shininess index of the material. */
 
-  explicit BlinnPhong(Color color, Color specularColor, double shininess)
-      : color(color), specularColor(specularColor), shininess(shininess) {};
+  /**
+   * Creates a new shiny material with the specified diffuse color, specular
+   * color, and shininess.
+   *
+   * @param _diffuseColor The base color of the material.
+   * @param _specularColor The color of the specular highlights.
+   * @param _shininess The shininess index of the material.
+   */
+  BlinnPhong(Color _diffuseColor, Color _specularColor, double _shininess)
+      : diffuseColor(_diffuseColor), specularColor(_specularColor),
+        shininess(_shininess) {};
 
   Vector4 vertexShader(const Uniforms &uniforms,
                        const Attributes &attributes) override {
@@ -31,7 +44,7 @@ public:
         const auto ambientLight = dynamic_cast<AmbientLight &>(light);
         const auto ambient = ambientLight.intensity * ambientLight.color;
 
-        outputColor += ambient * color;
+        outputColor += ambient * diffuseColor;
       } else if (light.isPointLight()) {
         const auto pointLight = dynamic_cast<PointLight &>(light);
         const auto fragWorldPosition =
@@ -58,7 +71,7 @@ public:
             shininess);
         const auto spec = specularColor * specular;
 
-        outputColor += (diffuseColor + spec) * pointLight.intensity * color;
+        outputColor += (diffuseColor + spec) * pointLight.intensity * diffuse;
       }
     }
 
