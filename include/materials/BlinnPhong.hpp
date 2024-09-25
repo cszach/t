@@ -47,6 +47,7 @@ public:
         outputColor += ambient * diffuseColor;
       } else if (light.isPointLight()) {
         const auto pointLight = dynamic_cast<PointLight &>(light);
+
         const auto fragWorldPosition =
             (uniforms.modelMatrix * Vector4(varyings.localPosition, 1))
                 .toVector3();
@@ -55,23 +56,27 @@ public:
         const auto worldNormal =
             (uniforms.normalMatrix * varyings.localNormal).normalize();
 
-        const auto lightDirection =
-            (lightWorldPosition - fragWorldPosition).normalize();
-        const auto viewDirection =
-            (uniforms.cameraPosition - fragWorldPosition).normalize();
-        const auto reflectDirection =
-            Vector3::reflect(-lightDirection, worldNormal);
+        const auto lightDirection = lightWorldPosition - fragWorldPosition;
+        const double distance = Vector3::dot(lightDirection, lightDirection);
+        lightDirection.unit();
 
-        const auto diffuse =
-            std::max(Vector3::dot(worldNormal, lightDirection), 0.0);
-        const auto diffuseColor = pointLight.color * diffuse;
+        auto lambertian =
+            std::max(Vector3::dot(lightDirection, worldNormal), 0.0);
+        auto specular = 0.0;
 
-        const auto specular = std::pow(
-            std::max(Vector3::dot(viewDirection, reflectDirection), 0.0),
-            shininess);
-        const auto spec = specularColor * specular;
+        if (lambertian > 0) {
+          const auto viewDirection =
+              (uniforms.cameraPosition - fragWorldPosition).normalize();
+          const auto halfway = (lightDirection + viewDirection).normalize();
+          const auto specularAngle =
+              std::max(Vector3::dot(halfway, worldNormal), 0.0);
+          specular = std::pow(specularAngle, shininess);
+        }
 
-        outputColor += (diffuseColor + spec) * pointLight.intensity * diffuse;
+        outputColor += diffuseColor * lambertian * pointLight.color *
+                           pointLight.power() / distance +
+                       specularColor * specular * pointLight.color *
+                           pointLight.power() / distance;
       }
     }
 

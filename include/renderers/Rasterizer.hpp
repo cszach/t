@@ -106,11 +106,11 @@ public:
       auto geometry = mesh.geometry;
       auto modelViewMatrix = viewMatrix * mesh.modelMatrix;
       auto normalMatrix =
-          Matrix3x3(modelViewMatrix.elements[0], modelViewMatrix.elements[1],
-                    modelViewMatrix.elements[2], modelViewMatrix.elements[4],
-                    modelViewMatrix.elements[5], modelViewMatrix.elements[6],
-                    modelViewMatrix.elements[8], modelViewMatrix.elements[9],
-                    modelViewMatrix.elements[10])
+          Matrix3x3(mesh.modelMatrix.elements[0], mesh.modelMatrix.elements[1],
+                    mesh.modelMatrix.elements[2], mesh.modelMatrix.elements[4],
+                    mesh.modelMatrix.elements[5], mesh.modelMatrix.elements[6],
+                    mesh.modelMatrix.elements[8], mesh.modelMatrix.elements[9],
+                    mesh.modelMatrix.elements[10])
               .inverse()
               .transpose();
 

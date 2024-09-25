@@ -38,6 +38,8 @@ public:
    * appropriately.
    */
   bool isPointLight() const override { return true; }
+
+  double power() const { return intensity * 4 * M_PI; }
 };
 
 } // namespace t
