@@ -6,8 +6,7 @@
 namespace t {
 
 /**
- * A material that maps the mesh's world normal vectors to normalized RGB
- * colors.
+ * A material that maps the mesh's normal vectors to normalized RGB colors.
  */
 class NormalColor : public Material {
 public:
@@ -20,7 +19,7 @@ public:
   Color fragmentShader(
       const Uniforms &uniforms, const Varyings &varyings,
       const std::vector<std::reference_wrapper<Light>> &lights) override {
-    return Color((uniforms.normalMatrix * varyings.localNormal).absolute());
+    return Color(varyings.localNormal.absolute());
   }
 };
 
