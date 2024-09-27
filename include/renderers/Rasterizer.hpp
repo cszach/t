@@ -14,8 +14,21 @@
 
 namespace t {
 
+/**
+ * The most basic renderer that renders your beautiful 3D scene.
+ *
+ * The renderer uses rasterization and forward rendering, and renders one object
+ * at a time.
+ */
 class Rasterizer {
 public:
+  /**
+   * Renders the given scene using the given camera to the given render target.
+   *
+   * @param scene The scene to render.
+   * @param camera The camera to render the scene with a.k.a. the active camera.
+   * @param renderTarget The render target i.e. texture to render the scene to.
+   */
   template <class BufferType>
   void render(Scene &scene, Camera &camera,
               RenderTarget<BufferType> &renderTarget) {
