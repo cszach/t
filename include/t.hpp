@@ -31,3 +31,17 @@
 #include "primitives/Uniforms.hpp"
 #include "primitives/Varyings.hpp"
 #include "renderers/Rasterizer.hpp"
+
+/**
+ * \addtogroup t
+ * @{
+ */
+
+/**
+ * The t software 3D graphics library.
+ *
+```cpp
+#include "t.hpp"
+```
+ */
+namespace t {}
