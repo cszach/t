@@ -97,6 +97,8 @@ ctest
   original Utah teapot (3488 tris) with normal material, with an FPS counter at
   the top-left (might not be visible due to the output being constantly
   overwritten); useful for testing performance.
+- [`triangle.cpp`](src/triangle.cpp): a simple triangle printed to the terminal
+  screen. Demonstrates how to set up a custom 3D geometry.
 
 For all demos, please make sure your terminal is at least 80 cells wide and 24
 cells high. You can go into the source code and change the `width` and `height`
