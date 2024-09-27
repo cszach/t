@@ -15,12 +15,11 @@ namespace t {
  * model](https://en.wikipedia.org/wiki/Phong_reflection_model).
  *
  * For the {@link BlinnPhong} material, the light's color contribution will be
- * \f$color = color_{object} \times color_{light} \times intensity\f$ where:
- * - \f$color\f$ is the light's color contribution to the object's appearance;
- * - \f$color_{object}\f$ is the {@linkplain BlinnPhong#color material's color};
- * - \f$color_{light}\f$ is {@linkplain #color the color of the ambient light};
- * - \f$intensity\f$ is {@linkplain #intensity the intensity of the ambient
- * light}.
+ * \f$c = c_{o} \times c_{l} \times s\f$ where:
+ * - \f$c\f$ is the light's color contribution to the object's appearance;
+ * - \f$c_{o}\f$ is the {@linkplain BlinnPhong#color material's color};
+ * - \f$c_{l}\f$ is {@linkplain #color the color of the ambient light};
+ * - \f$s\f$ is {@linkplain #intensity the intensity of the ambient light}.
  */
 class AmbientLight : public Light {
 public:

@@ -24,13 +24,14 @@ namespace t {
  * Camera#projectionMatrix projection matrix}:
  * \f[
  *   \begin{bmatrix}
- *     \frac{1}{aspectRatio \cdot \tan(verticalFov / 2)} & 0 & 0 & 0 \\
- *     0 & \frac{1}{\tan(verticalFov / 2)} & 0 & 0 \\
- *     0 & 0 & -\frac{far + near}{far - near} & \frac{-2 \cdot far \cdot
- * near}{far - near} \\ 0 & 0 & -1 & 0 \end{bmatrix} \f]
+ *     \frac{1}{a \cdot \tan(v / 2)} & 0 & 0 & 0 \\
+ *     0 & \frac{1}{\tan(v / 2)} & 0 & 0 \\
+ *     0 & 0 & -\frac{f + n}{f - n} & \frac{-2 \cdot f \cdot n}{f - n} \\ 0 & 0
+ * & -1 & 0 \end{bmatrix} \f]
  *
- * …where \f$aspectRatio\f$, \f$verticalFov\f$, \f$far\f$, and \f$near\f$ define
- * the camera's view frustum.
+ * …where \f$a\f$, \f$v\f$, \f$f\f$, and \f$n\f$ are the aspect ratio, vertical
+ * field-of-view in radians, far plane, and near plane of the camera
+ * respectively and define the camera's view frustum.
  */
 class PerspectiveCamera : public Camera {
 public:

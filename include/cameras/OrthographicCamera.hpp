@@ -21,15 +21,16 @@ const auto camera = OrthographicCamera(width / -2, width / 2, height / 2, height
  * Camera#projectionMatrix projection matrix}:
  * \f[
  *   \begin{bmatrix}
- *     \frac{2}{right - left} & 0 & 0 & -\frac{right + left}{right - left} \\
- *     0 & \frac{2}{top - bottom} & 0 & -\frac{top + bottom}{top - bottom} \\
- *     0 & 0 & -\frac{2}{far - near} & -\frac{far + near}{far - near} \\
+ *     \frac{2}{r - l} & 0 & 0 & -\frac{r + l}{r - l} \\
+ *     0 & \frac{2}{t - b} & 0 & -\frac{t + b}{t - b} \\
+ *     0 & 0 & -\frac{2}{f - n} & -\frac{f + n}{f - n} \\
  *     0 & 0 & 0 & 1
  *   \end{bmatrix}
  * \f]
  *
- * …where \f$right\f$, \f$left\f$, \f$top\f$, and \f$bottom\f$ define the
- * camera's view frustum.
+ * …where \f$r\f$, \f$l\f$, \f$t\f$, \f$b\f$, \f$f\f$, \f$n\f$ are the right,
+ * left, top, bottom, far, and near planes of the camera's view frustum,
+ * respectively.
  */
 class OrthographicCamera : public Camera {
 public:
@@ -47,8 +48,7 @@ public:
    * The view frustum of the orthographic camera is in the shape of a box. Only
    * objects in this box may appear in the render.
    *
-   * The planes should be set such that \f$right > left\f$ and
-   * \f$top > bottom\f$.
+   * The planes should be set such that `_right > _left` and `_top > _bottom`.
    *
    * @param _left The left plane of the new camera's view frustum.
    * @param _right The right plane of the new camera's view frustum.
