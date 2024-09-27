@@ -35,9 +35,8 @@ public:
    * The vertex shader of this material, which will be run for every vertex of
    * the mesh's geometry.
    *
-   * @param uniforms A reference to the {@linkplain Uniforms uniforms struct}.
-   * @param attributes A reference to the {@linkplain Attributes attributes
-   * struct}.
+   * @param uniforms The uniforms.
+   * @param attributes The attributes of the vertex.
    * @returns The transformed vertex's position in homogeneous coordinates,
    * usually in normalized device coordinates (NDC).
    */
@@ -46,12 +45,14 @@ public:
 
   /**
    * The fragment shader of this material, which will be run for every fragment
-   * that the mesh covers on the screen.
+   * that the mesh covers on the screen to determine its color.
    *
-   * @param uniforms A reference to the {@linkplain Uniforms uniforms struct}.
-   * @param uniforms A reference to the {@linkplain Varyings varyings struct}.
-   * @param lights A reference to the list of lights in the scene.
+   * @param uniforms The uniforms.
+   * @param varyings The varyings.
+   * @param lights The list of lights in the scene.
    * @returns The color of the fragment this shader is invoked on.
+   *
+   * @see Fragment
    */
   virtual Color
   fragmentShader(const Uniforms &uniforms, const Varyings &varyings,
