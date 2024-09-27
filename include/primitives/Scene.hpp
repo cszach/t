@@ -7,6 +7,12 @@
 
 namespace t {
 
+/**
+ * The 3D scene class.
+ *
+ * The scene is the container for all 3D objects in a scene. In the 3D scene
+ * graph, the scene is the root node.
+ */
 class Scene : public Object3D {};
 
 } // namespace t
