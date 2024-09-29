@@ -6,7 +6,7 @@ A software graphics library written in C++, originally for the terminal.
 
 _Rendering the original Utah teapot (triangulated at 3488 tris) in 125 FPS._
 
-## Example
+## 💻 Example
 
 The below example creates a cube with its normals mapped to its colors, then
 animate it rotating in a while loop. The cube's rotational speed might be
@@ -65,7 +65,7 @@ int main() {
 }
 ```
 
-## Getting started
+## 🏃 Getting started
 
 Clone:
 
@@ -94,7 +94,7 @@ cd build
 ctest
 ```
 
-## Demos
+## 🫖 Demos
 
 - [`cube.cpp`](src/cube.cpp): the rotating cube example from above,
 - [`cornell_box.cpp`](src/cornell_box.cpp): the classic Cornell box rendered
@@ -110,7 +110,20 @@ For all demos, please make sure your terminal is at least 80 cells wide and 24
 cells high. You can go into the source code and change the `width` and `height`
 values.
 
-## Specification
+## 📜 Specification
+
+### Cameras
+
+- Project matrices are expected to transform view space into clip space (NDC).
+- The normalized device coordinates (NDC) range from \f$(-1, -1, -1)\f$ to
+  \f$(1, 1, 1)\f$, and the bottom left corner is \f$(-1, -1, z)\f$.
+
+### Math
+
+- Matrix-vector multiplication use post-multiplication notation.
+  - That means `B = MA` where `M` is a matrix, and `A` and `B` are vectors.
+- Like WebGL, matrix addition, subtraction, and division are component-wise,
+  but multiplication is not.
 
 ### Primitives
 
@@ -122,19 +135,14 @@ values.
   has a local position, rotation, and scale.
 - The vertex data maybe indexed or not.
 
-### Math
-
-- Matrix-vector multiplication use post-multiplication notation.
-  - That means `B = MA` where `M` is a matrix, and `A` and `B` are vectors.
-- Like WebGL, matrix addition, subtraction, and division are component-wise,
-  but multiplication is not.
-
 ### Renderers
 
 #### Rasterizer
 
 - Forward rendering pipeline with vertex and fragment shading.
 - One "draw call" for every mesh.
+- Depth tests use less-than-or-equal-to comparison; this means that the higher
+  the Z value, the more "far-away" the object is.
 
 ## 🚧 To-do's
 
