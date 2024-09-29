@@ -105,6 +105,8 @@ ctest
   original Utah teapot (3488 tris) with normal material, with an FPS counter at
   the top-left (might not be visible due to the output being constantly
   overwritten); useful for testing performance.
+- [`teapot2.cpp`](src/teapot2.cpp): a blue Utah teapot with ambient lighting and
+  a point light traveling in a circle. Showcases specular highlights;
 - [`triangle.cpp`](src/triangle.cpp): a simple triangle printed to the terminal
   screen. Demonstrates how to set up a custom 3D geometry.
 
