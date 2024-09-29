@@ -34,6 +34,8 @@ public:
    *
    * Used internally for type checking before casting an {@link Object3D} to a
    * {@link Mesh}.
+   *
+   * @returns `true`
    */
   bool isMesh() const override { return true; }
 };

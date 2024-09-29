@@ -7,7 +7,7 @@
 namespace t {
 
 /**
- * A light that illuminates all objects in the scene equally.
+ * The ambient light, which illuminates all objects in the scene equally.
  *
  * Ambient lighting is used in many ways, such as providing a base level of
  * illumination in a dark scene where you don't want the scene to be completely
@@ -17,7 +17,7 @@ namespace t {
  * For the {@link BlinnPhong} material, the light's color contribution will be
  * \f$c = c_{o} \times c_{l} \times s\f$ where:
  * - \f$c\f$ is the light's color contribution to the object's appearance;
- * - \f$c_{o}\f$ is the {@linkplain BlinnPhong#color material's color};
+ * - \f$c_{o}\f$ is the {@linkplain BlinnPhong#diffuseColor material's color};
  * - \f$c_{l}\f$ is {@linkplain #color the color of the ambient light};
  * - \f$s\f$ is {@linkplain #intensity the intensity of the ambient light}.
  *
@@ -44,6 +44,8 @@ public:
    * Always returns `true`. May be used in vertex and fragment shaders to
    * determine the type of light and make a cast from {@link Light}
    * appropriately.
+   *
+   * @returns `true`
    */
   bool isAmbientLight() const override { return true; }
 };

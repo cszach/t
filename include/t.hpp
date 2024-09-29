@@ -33,43 +33,48 @@
 #include "renderers/Rasterizer.hpp"
 
 /**
+ * \file t.hpp
+ * The t 3D graphics library header file.
+ */
+
+/**
  * @defgroup cameras
- * 
+ *
  * A camera is a point of view in a 3D scene. It is defined by a projection
  * matrix that transforms the view-space coordinates into normalized device
  * coordinates (NDC).
  */
 /**
  * @defgroup geometries
- * 
+ *
  * A geometry defines the shape of a 3D object. It includes information such as
  * the positions of the vertices, the normals of the vertices, and the indices
  * of the vertices that make up the faces.
  */
 /**
  * @defgroup lights
- * 
+ *
  * Lights illuminate 3D objects in a scene.
  */
 /**
  * @defgroup materials
- * 
+ *
  * Materials define the look of 3D objects.
  */
 /**
  * @defgroup math
- * 
+ *
  * Common mathematical operations and utilities used in 3D graphics.
  */
 /**
  * @defgroup primitives
- * 
+ *
  * The basic building blocks of 3D graphics such as colors, objects, textures,
  * shader inputs, and more.
  */
 /**
  * @defgroup renderers
- * 
+ *
  * A renderer transforms a 3D scene into a 2D image from the point of view of
  * the active camera.
  */
@@ -81,4 +86,11 @@
 #include "t.hpp"
 ```
  */
-namespace t {}
+namespace t {
+
+/**
+ * An alias for {@link Object3D}.
+ */
+using Group = Object3D;
+
+} // namespace t

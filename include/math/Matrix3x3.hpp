@@ -17,7 +17,7 @@ namespace t {
 #define n33 elements[8]
 
 /**
- * A class representing \f$3 \times 3\f$ matrices.
+ * The \f$3 \times 3\f$ matrix class.
  *
  * \ingroup math
  */
@@ -43,15 +43,15 @@ public:
   /**
    * Creates a new \f$3 \times 3\f$ matrix with the specified elements.
    *
-   * @param _n11 The \f$(1, 1)\f$ element of the matrix.
-   * @param _n12 The \f$(1, 2)\f$ element of the matrix.
-   * @param _n13 The \f$(1, 3)\f$ element of the matrix.
-   * @param _n21 The \f$(2, 1)\f$ element of the matrix.
-   * @param _n22 The \f$(2, 2)\f$ element of the matrix.
-   * @param _n23 The \f$(2, 3)\f$ element of the matrix.
-   * @param _n31 The \f$(3, 1)\f$ element of the matrix.
-   * @param _n32 The \f$(3, 2)\f$ element of the matrix.
-   * @param _n33 The \f$(3, 3)\f$ element of the matrix.
+   * @param _n11 The \f$(1, 1)\f$ element of the new matrix.
+   * @param _n12 The \f$(1, 2)\f$ element of the new matrix.
+   * @param _n13 The \f$(1, 3)\f$ element of the new matrix.
+   * @param _n21 The \f$(2, 1)\f$ element of the new matrix.
+   * @param _n22 The \f$(2, 2)\f$ element of the new matrix.
+   * @param _n23 The \f$(2, 3)\f$ element of the new matrix.
+   * @param _n31 The \f$(3, 1)\f$ element of the new matrix.
+   * @param _n32 The \f$(3, 2)\f$ element of the new matrix.
+   * @param _n33 The \f$(3, 3)\f$ element of the new matrix.
    */
   Matrix3x3(double _n11, double _n12, double _n13, double _n21, double _n22,
             double _n23, double _n31, double _n32, double _n33)
@@ -83,15 +83,15 @@ public:
   /**
    * Sets the elements of this matrix.
 
-   * @param _n11 The new \f$(1, 1)\f$ element of the matrix.
-   * @param _n12 The new \f$(1, 2)\f$ element of the matrix.
-   * @param _n13 The new \f$(1, 3)\f$ element of the matrix.
-   * @param _n21 The new \f$(2, 1)\f$ element of the matrix.
-   * @param _n22 The new \f$(2, 2)\f$ element of the matrix.
-   * @param _n23 The new \f$(2, 3)\f$ element of the matrix.
-   * @param _n31 The new \f$(3, 1)\f$ element of the matrix.
-   * @param _n32 The new \f$(3, 2)\f$ element of the matrix.
-   * @param _n33 The new \f$(3, 3)\f$ element of the matrix.
+   * @param _n11 The new \f$(1, 1)\f$ element of this matrix.
+   * @param _n12 The new \f$(1, 2)\f$ element of this matrix.
+   * @param _n13 The new \f$(1, 3)\f$ element of this matrix.
+   * @param _n21 The new \f$(2, 1)\f$ element of this matrix.
+   * @param _n22 The new \f$(2, 2)\f$ element of this matrix.
+   * @param _n23 The new \f$(2, 3)\f$ element of this matrix.
+   * @param _n31 The new \f$(3, 1)\f$ element of this matrix.
+   * @param _n32 The new \f$(3, 2)\f$ element of this matrix.
+   * @param _n33 The new \f$(3, 3)\f$ element of this matrix.
    * @returns This matrix.
    */
   Matrix3x3 &set(double _n11, double _n12, double _n13, double _n21,
@@ -211,9 +211,9 @@ public:
   double operator[](std::size_t index) const { return elements[index]; }
 
   /**
-   * Adds another \f$3 \times 3\f$ matrix to this matrix.
+   * Adds the specified \f$3 \times 3\f$ matrix to this matrix.
    *
-   * @param m A \f$3 \times 3\f$ matrix to add to this matrix.
+   * @param m A \f$3 \times 3\f$ matrix.
    * @returns This matrix.
    */
   Matrix3x3 &operator+=(const Matrix3x3 &m) {
@@ -227,7 +227,7 @@ public:
   /**
    * Adds the specified constant to all elements in this matrix.
    *
-   * @param s A constant to add to the elements of this matrix.
+   * @param s A constant.
    * @returns This matrix.
    */
   Matrix3x3 &operator+=(double s) {
@@ -239,9 +239,9 @@ public:
   }
 
   /**
-   * Substracts another \f$3 \times 3\f$ matrix from this matrix.
+   * Substracts the specified \f$3 \times 3\f$ matrix from this matrix.
    *
-   * @param m A \f$3 \times 3\f$ matrix to substract from this matrix.
+   * @param m A \f$3 \times 3\f$ matrix.
    * @returns This matrix.
    */
   Matrix3x3 &operator-=(const Matrix3x3 &m) {
@@ -255,15 +255,13 @@ public:
   /**
    * Substracts the specified constant from all elements in this matrix.
    *
-   * @param s A constant to substract from the elements of this matrix.
+   * @param s A constant.
    * @returns This matrix.
    */
   Matrix3x3 &operator-=(double s) {
     for (auto &element : elements) {
       element -= s;
     }
-
-    return *this;
 
     return *this;
   }
@@ -283,7 +281,7 @@ public:
   /**
    * Multiplies the elements of this matrix with the specified constant.
    *
-   * @param s A constant to multiply the elements of this matrix with.
+   * @param s A constant.
    * @returns This matrix.
    */
   Matrix3x3 &operator*=(double s) {
@@ -295,11 +293,10 @@ public:
   }
 
   /**
-   * Divides the elements of this matrix with the elements of another \f$3
-   * \times 3\f$ matrix in an element-wise manner.
+   * Divides the elements of this matrix by the corresponding elements of
+   * the specified \f$3 \times 3\f$ matrix.
    *
-   * @param m A \f$3 \times 3\f$ matrix to divide the elements of this matrix
-   * with.
+   * @param m A \f$3 \times 3\f$ matrix.
    * @returns This matrix.
    */
   Matrix3x3 &operator/=(const Matrix3x3 &m) {
@@ -313,7 +310,7 @@ public:
   /**
    * Divides the elements of this matrix with the specified constant.
    *
-   * @param s A constant to divide the elements of this matrix with.
+   * @param s A constant.
    * @returns This matrix.
    */
   Matrix3x3 &operator/=(double s) {
@@ -325,16 +322,16 @@ public:
   }
 
   /**
-   * Returns whether 2 \f$3 \times 3\f$ matrices are equal.
+   * Returns whether two \f$3 \times 3\f$ matrices are equal.
    *
-   * @param a A matrix.
+   * @param a A \f$3 \times 3\f$ matrix.
    * @param b Another \f$3 \times 3\f$ matrix.
-   * @returns `true` if matrix `a` equals `b`, `false` otherwise.
+   * @returns `true` if `a` equals `b`, `false` otherwise.
    */
   friend bool operator==(const Matrix3x3 &a, const Matrix3x3 &b) = default;
 
   /**
-   * Adds 2 \f$3 \times 3\f$ matrices.
+   * Adds two \f$3 \times 3\f$ matrices.
    *
    * @param a A \f$3 \times 3\f$ matrix.
    * @param b Another \f$3 \times 3\f$ matrix.
@@ -351,7 +348,7 @@ public:
    *
    * @param a A \f$3 \times 3\f$ matrix.
    * @param s A constant.
-   * @returns The resulting matrix when adding `s` to the elements of `a`.
+   * @returns The resulting matrix when adding `s` to all elements of `a`.
    */
   friend Matrix3x3 operator+(const Matrix3x3 &a, double s) {
     return Matrix3x3(a.n11 + s, a.n12 + s, a.n13 + s, a.n21 + s, a.n22 + s,
@@ -363,7 +360,7 @@ public:
    *
    * @param s A constant.
    * @param a A \f$3 \times 3\f$ matrix.
-   * @returns The resulting matrix when adding `s` to the elements of `a`.
+   * @returns The resulting matrix when adding `s` to all elements of `a`.
    */
   friend Matrix3x3 operator+(double s, const Matrix3x3 &a) { return a + s; }
 
@@ -381,11 +378,11 @@ public:
   }
 
   /**
-   * Substracts a constant from a \f$3 \times 3\f$ matrix.
+   * Substracts a constant from all elements of a \f$3 \times 3\f$ matrix.
    *
    * @param a A \f$3 \times 3\f$ matrix.
    * @param s A constant.
-   * @returns The resulting matrix when substracting `s` from the elements of
+   * @returns The resulting matrix when substracting `s` from all elements of
    * `a`.
    */
   friend Matrix3x3 operator-(const Matrix3x3 &a, double s) {
@@ -394,11 +391,13 @@ public:
   }
 
   /**
-   * Substracts a \f$3 \times 3\f$ matrix from a constant matrix.
+   * Substracts a \f$3 \times 3\f$ matrix from a \f$3 \times 3\f$ constant
+   * matrix.
    *
    * @param s A constant for a \f$3 \times 3\f$ constant matrix.
    * @param a A \f$3 \times 3\f$ matrix.
-   * @returns The resulting matrix when substracting `a` from `s`.
+   * @returns The resulting matrix when substracting `a` from the constant
+   * matrix of `s`.
    */
   friend Matrix3x3 operator-(double s, const Matrix3x3 &a) {
     return Matrix3x3(s - a.n11, s - a.n12, s - a.n13, s - a.n21, s - a.n22,
@@ -406,14 +405,14 @@ public:
   }
 
   /**
-   * Multiplies 2 \f$3 \times 3\f$ matrices.
+   * Multiplies two \f$3 \times 3\f$ matrices.
    *
    * Note that this is not an element-wise multiplication, but [matrix
    * multiplication](https://en.wikipedia.org/wiki/Matrix_multiplication).
    *
    * @param a A \f$3 \times 3\f$ matrix.
    * @param b Another \f$3 \times 3\f$ matrix.
-   * @returns The product of `a` and `b`.
+   * @returns The matrix product of `a` and `b`.
    */
   friend Matrix3x3 operator*(const Matrix3x3 &a, const Matrix3x3 &b) {
     return Matrix3x3(a.n11 * b.n11 + a.n12 * b.n21 + a.n13 * b.n31,
@@ -432,7 +431,7 @@ public:
    *
    * @param a A \f$3 \times 3\f$ matrix.
    * @param s A constant.
-   * @returns The resulting matrix when multiplying the elements of `a` with
+   * @returns The resulting matrix when multiplying all elements of `a` with
    * `s`.
    */
   friend Matrix3x3 operator*(const Matrix3x3 &a, double s) {
@@ -445,16 +444,16 @@ public:
    *
    * @param s A constant.
    * @param a A \f$3 \times 3\f$ matrix.
-   * @returns The resulting matrix when multiplying the elements of `a` with
+   * @returns The resulting matrix when multiplying all elements of `a` with
    * `s`.
    */
   friend Matrix3x3 operator*(double s, const Matrix3x3 &a) { return a * s; }
 
   /**
-   * Multiplies a \f$3 \times 3\f$ matrix with a three-dimensional vector.
+   * Multiplies a \f$3 \times 3\f$ matrix with a 3D vector.
    *
    * @param a A \f$3 \times 3\f$ matrix.
-   * @param v A three-dimensional vector.
+   * @param v A 3D vector.
    * @returns The product of `a` and `v`.
    */
   friend Vector3 operator*(const Matrix3x3 &a, const Vector3 &v) {
@@ -464,13 +463,11 @@ public:
   }
 
   /**
-   * Divides the elements of a \f$3 \times 3\f$ matrix by the elements of
-   * another \f$3 \times 3\f$ matrix in an element-wise manner.
+   * Returns the element-wise division of two \f$3 \times 3\f$ matrices.
    *
    * @param a A \f$3 \times 3\f$ matrix.
    * @param b Another \f$3 \times 3\f$ matrix.
-   * @returns The resulting matrix when dividing the elements of `a` by the
-   * corresponding elements of `b`.
+   * @returns The element-wise division of `a` and `b`.
    */
   friend Matrix3x3 operator/(const Matrix3x3 &a, const Matrix3x3 &b) {
     return Matrix3x3(a.n11 / b.n11, a.n12 / b.n12, a.n13 / b.n13, a.n21 / b.n21,
@@ -479,11 +476,11 @@ public:
   }
 
   /**
-   * Divides the elements of a \f$3 \times 3\f$ matrix by a constant.
+   * Divides all elements of a \f$3 \times 3\f$ matrix by a constant.
    *
    * @param a A \f$3 \times 3\f$ matrix.
    * @param s A constant.
-   * @returns The resulting matrix when dividing the elements of `a` by `s`.
+   * @returns The resulting matrix when dividing all elements of `a` by `s`.
    */
   friend Matrix3x3 operator/(const Matrix3x3 &a, double s) {
     return Matrix3x3(a.n11 / s, a.n12 / s, a.n13 / s, a.n21 / s, a.n22 / s,
@@ -491,13 +488,12 @@ public:
   }
 
   /**
-   * Divides the elements of a \f$3 \times 3\f$ constant matrix by the
-   * of another \f$3 \times 3\f$ matrix in an element-wise manner.
+   * Returns the element-wise division of a \f$3 \times 3\f$ constant matrix and
+   * a \f$3 \times 3\f$ matrix.
    *
    * @param s A constant for a \f$3 \times 3\f$ constant matrix.
    * @param a Another \f$3 \times 3\f$ matrix.
-   * @returns The resulting matrix when dividing the elements of `s` by the
-   * corresponding elements of `a`.
+   * @returns The element-wise division of the constant matrix and `a`.
    */
   friend Matrix3x3 operator/(double s, const Matrix3x3 &a) {
     return Matrix3x3(s / a.n11, s / a.n12, s / a.n13, s / a.n21, s / a.n22,

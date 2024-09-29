@@ -277,9 +277,6 @@ public:
    *
    * @param v A 4D vector.
    * @returns This vector.
-   *
-   * @see #dot
-   * @see #cross
    */
   Vector4 &operator*=(const Vector4 &v) {
     x *= v.x;

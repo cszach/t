@@ -8,8 +8,7 @@
 namespace t {
 
 /**
- * A base class for 3D geometries. A 3D geometry defines the shape of a 3D
- * object.
+ * The base 3D geometry class. A 3D geometry defines the shape of a 3D object.
  *
  * A 3D geometry is defined in terms of triangles (which have 3 vertices each)
  * and contains the following data:
@@ -39,7 +38,7 @@ class Geometry {
 public:
   BufferAttribute<double>
       vertexPositions; /**< The vertex buffer. Every 3 consecutive numbers in
-                          this buffer define the X, Y, and Z coordinates of a
+                          this buffer define the x, y, and z coordinates of a
                           single vertex. The order in which a vertex appears in
                           the buffer defines its index e.g. the first 3 numbers
                           are the position of the vertex at index 0, the next 3
@@ -53,7 +52,7 @@ public:
                       that make up a single triangle. */
   BufferAttribute<double>
       vertexNormals; /**< The normal buffer. Every 3 consecutive numbers in this
-                        buffer are the X, Y, and Z components of the normal
+                        buffer are the x, y, and z components of the normal
                         vector of the corresponding vertex. */
   FrontFace frontFace =
       FrontFace::CounterClockwise; /**< The vertex winding order which
@@ -89,7 +88,7 @@ public:
    * Every 3 consecutive numbers in this buffer are indices of vertices that
    * form a single triangle.
    *
-   * @param faceIndices The new index buffer of this geometry.
+   * @param _faceIndices The new index buffer of this geometry.
    */
   void setIndices(BufferAttribute<int> _faceIndices) {
     faceIndices = _faceIndices;

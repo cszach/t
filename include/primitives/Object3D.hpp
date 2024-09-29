@@ -69,12 +69,18 @@ public:
    */
   virtual bool isLight() const { return false; }
 
+  /**
+   * Adds another 3D object as a child of this 3D object.
+   *
+   * @returns This 3D object.
+   */
   Object3D &add(Object3D &child) {
     children.push_back(child);
     child.parent = *this;
 
     return *this;
   }
+
   // Object3D &lookAt(const Vector3 &target);
   // Object3D &lookAt(const Object3D &target);
 
@@ -164,8 +170,6 @@ public:
     return *this;
   }
 };
-
-using Group = Object3D;
 
 } // namespace t
 

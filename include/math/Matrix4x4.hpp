@@ -28,7 +28,7 @@ namespace t {
 #define n44 elements[15]
 
 /**
- * A class representing \f$4 \times 4\f$ matrices.
+ * The \f$4 \times 4\f$ matrix class.
  *
  * \ingroup math
  */
@@ -142,22 +142,22 @@ public:
   /**
    * Creates a new \f$4 \times 4\f$ matrix with the specified elements.
    *
-   * @param _n11 The \f$(1, 1)\f$ element of the matrix.
-   * @param _n12 The \f$(1, 2)\f$ element of the matrix.
-   * @param _n13 The \f$(1, 3)\f$ element of the matrix.
-   * @param _n14 The \f$(1, 4)\f$ element of the matrix.
-   * @param _n21 The \f$(2, 1)\f$ element of the matrix.
-   * @param _n22 The \f$(2, 2)\f$ element of the matrix.
-   * @param _n23 The \f$(2, 3)\f$ element of the matrix.
-   * @param _n24 The \f$(2, 4)\f$ element of the matrix.
-   * @param _n31 The \f$(3, 1)\f$ element of the matrix.
-   * @param _n32 The \f$(3, 2)\f$ element of the matrix.
-   * @param _n33 The \f$(3, 3)\f$ element of the matrix.
-   * @param _n34 The \f$(3, 4)\f$ element of the matrix.
-   * @param _n41 The \f$(4, 1)\f$ element of the matrix.
-   * @param _n42 The \f$(4, 2)\f$ element of the matrix.
-   * @param _n43 The \f$(4, 3)\f$ element of the matrix.
-   * @param _n44 The \f$(4, 4)\f$ element of the matrix.
+   * @param _n11 The \f$(1, 1)\f$ element of the new matrix.
+   * @param _n12 The \f$(1, 2)\f$ element of the new matrix.
+   * @param _n13 The \f$(1, 3)\f$ element of the new matrix.
+   * @param _n14 The \f$(1, 4)\f$ element of the new matrix.
+   * @param _n21 The \f$(2, 1)\f$ element of the new matrix.
+   * @param _n22 The \f$(2, 2)\f$ element of the new matrix.
+   * @param _n23 The \f$(2, 3)\f$ element of the new matrix.
+   * @param _n24 The \f$(2, 4)\f$ element of the new matrix.
+   * @param _n31 The \f$(3, 1)\f$ element of the new matrix.
+   * @param _n32 The \f$(3, 2)\f$ element of the new matrix.
+   * @param _n33 The \f$(3, 3)\f$ element of the new matrix.
+   * @param _n34 The \f$(3, 4)\f$ element of the new matrix.
+   * @param _n41 The \f$(4, 1)\f$ element of the new matrix.
+   * @param _n42 The \f$(4, 2)\f$ element of the new matrix.
+   * @param _n43 The \f$(4, 3)\f$ element of the new matrix.
+   * @param _n44 The \f$(4, 4)\f$ element of the new matrix.
    */
   Matrix4x4(double _n11, double _n12, double _n13, double _n14, double _n21,
             double _n22, double _n23, double _n24, double _n31, double _n32,
@@ -197,22 +197,22 @@ public:
   /**
    * Sets the elements of this matrix.
    *
-   * @param _n11 The new \f$(1, 1)\f$ element of the matrix.
-   * @param _n12 The new \f$(1, 2)\f$ element of the matrix.
-   * @param _n13 The new \f$(1, 3)\f$ element of the matrix.
-   * @param _n14 The new \f$(1, 4)\f$ element of the matrix.
-   * @param _n21 The new \f$(2, 1)\f$ element of the matrix.
-   * @param _n22 The new \f$(2, 2)\f$ element of the matrix.
-   * @param _n23 The new \f$(2, 3)\f$ element of the matrix.
-   * @param _n24 The new \f$(2, 4)\f$ element of the matrix.
-   * @param _n31 The new \f$(3, 1)\f$ element of the matrix.
-   * @param _n32 The new \f$(3, 2)\f$ element of the matrix.
-   * @param _n33 The new \f$(3, 3)\f$ element of the matrix.
-   * @param _n34 The new \f$(3, 4)\f$ element of the matrix.
-   * @param _n41 The new \f$(4, 1)\f$ element of the matrix.
-   * @param _n42 The new \f$(4, 2)\f$ element of the matrix.
-   * @param _n43 The new \f$(4, 3)\f$ element of the matrix.
-   * @param _n44 The new \f$(4, 4)\f$ element of the matrix.
+   * @param _n11 The new \f$(1, 1)\f$ element of this matrix.
+   * @param _n12 The new \f$(1, 2)\f$ element of this matrix.
+   * @param _n13 The new \f$(1, 3)\f$ element of this matrix.
+   * @param _n14 The new \f$(1, 4)\f$ element of this matrix.
+   * @param _n21 The new \f$(2, 1)\f$ element of this matrix.
+   * @param _n22 The new \f$(2, 2)\f$ element of this matrix.
+   * @param _n23 The new \f$(2, 3)\f$ element of this matrix.
+   * @param _n24 The new \f$(2, 4)\f$ element of this matrix.
+   * @param _n31 The new \f$(3, 1)\f$ element of this matrix.
+   * @param _n32 The new \f$(3, 2)\f$ element of this matrix.
+   * @param _n33 The new \f$(3, 3)\f$ element of this matrix.
+   * @param _n34 The new \f$(3, 4)\f$ element of this matrix.
+   * @param _n41 The new \f$(4, 1)\f$ element of this matrix.
+   * @param _n42 The new \f$(4, 2)\f$ element of this matrix.
+   * @param _n43 The new \f$(4, 3)\f$ element of this matrix.
+   * @param _n44 The new \f$(4, 4)\f$ element of this matrix.
    * @returns This matrix.
    */
   Matrix4x4 &set(double _n11, double _n12, double _n13, double _n14,
@@ -387,9 +387,9 @@ public:
   double operator[](std::size_t index) const { return elements.at(index); }
 
   /**
-   * Adds another \f$4 \times 4\f$ matrix to this matrix.
+   * Adds the specified \f$4 \times 4\f$ matrix to this matrix.
    *
-   * @param m A \f$4 \times 4\f$ matrix to add to this matrix.
+   * @param m A \f$4 \times 4\f$ matrix.
    * @returns This matrix.
    */
   Matrix4x4 &operator+=(const Matrix4x4 &m) {
@@ -403,7 +403,7 @@ public:
   /**
    * Adds the specified constant to all elements in this matrix.
    *
-   * @param s A constant to add to the elements of this matrix.
+   * @param s A constant.
    * @returns This matrix.
    */
   Matrix4x4 &operator+=(double s) {
@@ -415,9 +415,9 @@ public:
   }
 
   /**
-   * Substracts another \f$4 \times 4\f$ matrix from this matrix.
+   * Substracts the specified \f$4 \times 4\f$ matrix from this matrix.
    *
-   * @param m A \f$4 \times 4\f$ matrix to substract from this matrix.
+   * @param m A \f$4 \times 4\f$ matrix.
    * @returns This matrix.
    */
   Matrix4x4 &operator-=(const Matrix4x4 &m) {
@@ -431,7 +431,7 @@ public:
   /**
    * Substracts the specified constant from all elements in this matrix.
    *
-   * @param s A constant to substract from the elements of this matrix.
+   * @param s A constant.
    * @returns This matrix.
    */
   Matrix4x4 &operator-=(double s) {
@@ -457,7 +457,7 @@ public:
   /**
    * Multiplies the elements of this matrix with the specified constant.
    *
-   * @param s A constant to multiply the elements of this matrix with.
+   * @param s A constant.
    * @returns This matrix.
    */
   Matrix4x4 &operator*=(double s) {
@@ -469,11 +469,10 @@ public:
   }
 
   /**
-   * Divides the elements of this matrix with the elements of another \f$4
-   * \times 4\f$ matrix in an element-wise manner.
+   * Divides the elements of this matrix by the corresponding elements of
+   * the specified \f$3 \times 3\f$ matrix.
    *
-   * @param m A \f$4 \times 4\f$ matrix to divide the elements of this matrix
-   * with.
+   * @param m A \f$4 \times 4\f$ matrix.
    * @returns This matrix.
    */
   Matrix4x4 &operator/=(const Matrix4x4 &m) {
@@ -487,7 +486,7 @@ public:
   /**
    * Divides the elements of this matrix with the specified constant.
    *
-   * @param s A constant to divide the elements of this matrix with.
+   * @param s A constant.
    * @returns This matrix.
    */
   Matrix4x4 &operator/=(double s) {
@@ -501,17 +500,14 @@ public:
   /**
    * Returns whether two \f$4 \times 4\f$ matrices are equal.
    *
-   * Two matrices are equal if they have the same size and all their
-   * corresponding elements are equal.
-   *
    * @param a A \f$4 \times 4\f$ matrix.
    * @param b Another \f$4 \times 4\f$ matrix.
-   * @returns `true` if `a` is equal to `b`, `false` otherwise.
+   * @returns `true` if `a` equals `b`, `false` otherwise.
    */
   friend bool operator==(const Matrix4x4 &a, const Matrix4x4 &b) = default;
 
   /**
-   * Adds 2 \f$4 \times 4\f$ matrices.
+   * Adds two \f$4 \times 4\f$ matrices.
    *
    * @param a A \f$4 \times 4\f$ matrix.
    * @param b Another \f$4 \times 4\f$ matrix.
@@ -531,7 +527,7 @@ public:
    *
    * @param a A \f$4 \times 4\f$ matrix.
    * @param s A constant.
-   * @returns The resulting matrix when adding `s` to the elements of `a`.
+   * @returns The resulting matrix when adding `s` to all elements of `a`.
    */
   friend Matrix4x4 operator+(const Matrix4x4 &a, double s) {
     // clang-format off
@@ -547,7 +543,7 @@ public:
    *
    * @param s A constant.
    * @param a A \f$4 \times 4\f$ matrix.
-   * @returns The resulting matrix when adding `s` to the elements of `a`.
+   * @returns The resulting matrix when adding `s` to all elements of `a`.
    */
   friend Matrix4x4 operator+(double s, const Matrix4x4 &a) { return a + s; }
 
@@ -572,7 +568,7 @@ public:
    *
    * @param a A \f$4 \times 4\f$ matrix.
    * @param s A constant.
-   * @returns The resulting matrix when substracting `s` from the elements of
+   * @returns The resulting matrix when substracting `s` from all elements of
    * `a`.
    */
   friend Matrix4x4 operator-(const Matrix4x4 &a, double s) {
@@ -585,11 +581,13 @@ public:
   }
 
   /**
-   * Substracts a \f$4 \times 4\f$ matrix from a constant matrix.
+   * Substracts a \f$4 \times 4\f$ matrix from a \f$4 \times 4\f$ constant
+   * matrix.
    *
    * @param s A constant for a \f$4 \times 4\f$ constant matrix.
    * @param a A \f$4 \times 4\f$ matrix.
-   * @returns The resulting matrix when substracting `a` from `s`.
+   * @returns The resulting matrix when substracting `a` from the constant
+   * matrix of `s`.
    */
   friend Matrix4x4 operator-(double s, const Matrix4x4 &a) {
     // clang-format off
@@ -601,14 +599,14 @@ public:
   }
 
   /**
-   * Multiplies 2 \f$4 \times 4\f$ matrices.
+   * Multiplies two \f$4 \times 4\f$ matrices.
    *
    * Note that this is not an element-wise multiplication, but [matrix
    * multiplication](https://en.wikipedia.org/wiki/Matrix_multiplication).
    *
    * @param a A \f$4 \times 4\f$ matrix.
    * @param b Another \f$4 \times 4\f$ matrix.
-   * @returns The product of `a` and `b`.
+   * @returns The matrix product of `a` and `b`.
    */
   friend Matrix4x4 operator*(const Matrix4x4 &a, const Matrix4x4 &b) {
     return Matrix4x4(
@@ -672,13 +670,11 @@ public:
   }
 
   /**
-   * Divides the elements of a \f$4 \times 4\f$ matrix by the elements of
-   * another \f$4 \times 4\f$ matrix in an element-wise manner.
+   * Returns the element-wise division of two \f$4 \times 4\f$ matrices.
    *
    * @param a A \f$4 \times 4\f$ matrix.
    * @param b Another \f$4 \times 4\f$ matrix.
-   * @returns The resulting matrix when dividing the elements of `a` by the
-   * corresponding elements of `b`.
+   * @returns The element-wise division of `a` and `b`.
    */
   friend Matrix4x4 operator/(const Matrix4x4 &a, const Matrix4x4 &b) {
     // clang-format off
@@ -690,7 +686,7 @@ public:
   }
 
   /**
-   * Divides the elements of a \f$4 \times 4\f$ matrix by a constant.
+   * Divides all elements of a \f$4 \times 4\f$ matrix by a constant.
    *
    * @param a A \f$4 \times 4\f$ matrix.
    * @param s A constant.
@@ -706,13 +702,12 @@ public:
   }
 
   /**
-   * Divides the elements of a \f$4 \times 4\f$ constant matrix by the elements
-   * of another \f$4 \times 4\f$ matrix in an element-wise manner.
+   * Returns the element-wise division of a \f$4 \times 4\f$ constant matrix and
+   * a \f$4 \times 4\f$ matrix.
    *
-   * @param s A constant for a \f$3 \times 4\f$ constant matrix.
+   * @param s A constant for a \f$4 \times 4\f$ constant matrix.
    * @param a Another \f$4 \times 4\f$ matrix.
-   * @returns The resulting matrix when dividing the elements of `s` by the
-   * corresponding elements of `a`.
+   * @returns The element-wise division of the constant matrix and `a`.
    */
   friend Matrix4x4 operator/(double s, const Matrix4x4 &a) {
     // clang-format off

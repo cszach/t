@@ -10,7 +10,7 @@
 namespace t {
 
 /**
- * The base class for materials.
+ * The base material class.
  *
  * A material defines the look of a 3D object. It is one of the 2 components of
  * a {@linkplain Mesh 3D mesh}.

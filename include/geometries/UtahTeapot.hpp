@@ -3,9 +3,6 @@
 
 namespace t {
 
-// Data from https://users.cs.utah.edu/~dejohnso/models/teapot.html
-// The original Utah teapot with 3488 triangles
-
 #define vertexBuffer                                                           \
   {                                                                            \
       0.000000,  2.250000, 1.500000,  0.168000,  2.250000, 1.500000,           \

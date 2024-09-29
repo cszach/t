@@ -7,8 +7,8 @@
 namespace t {
 
 /**
- * A camera that uses [perspective
- * projection](https://en.wikipedia.org/wiki/Perspective_(graphical)).
+ * The [perspective
+ * projection](https://en.wikipedia.org/wiki/Perspective_(graphical)) camera.
  *
  * The perspective camera is technically a pinhole camera and is closer to what
  * the human eye and cameras see compared to the orthographic camera. It is the

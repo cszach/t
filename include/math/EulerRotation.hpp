@@ -6,8 +6,7 @@
 namespace t {
 
 /**
- * A class that represents [Euler
- * rotations](https://en.wikipedia.org/wiki/Euler_angles).
+ * The [Euler rotation](https://en.wikipedia.org/wiki/Euler_angles) class.
  *
  * An Euler rotation is represented by 3 rotations about the local X, Y, and Z
  * axes, executed in a certain order. Note that if the 3 rotations are the same
@@ -37,8 +36,8 @@ public:
   /**
    * Copies another Euler rotation into this Euler rotation.
    *
-   * @param source A reference to a Euler rotation.
-   * @returns A reference to this Euler rotation.
+   * @param source The Euler rotation to copy from.
+   * @returns This Euler rotation.
    */
   EulerRotation &copy(const EulerRotation &source) {
     x = source.x;
@@ -52,8 +51,8 @@ public:
   /**
    * Adds 2 Euler rotations.
    *
-   * @param a A reference to an Euler rotation.
-   * @param b A reference to an Euler rotation.
+   * @param a An Euler rotation.
+   * @param b Another Euler rotation.
    * @returns The result of adding `a` and `b`.
    */
   friend EulerRotation operator+(const EulerRotation &a,
@@ -64,9 +63,9 @@ public:
   /**
    * Substracts an Euler rotation from another Euler rotation.
    *
-   * @param a A reference to the Euler rotation to subtract from.
-   * @param b A reference to the Euler rotation to subtract from `a`.
-   * @returns The result of the subtraction.
+   * @param a An Euler rotation.
+   * @param b Another Euler rotation.
+   * @returns The difference of `a` and `b`.
    */
   friend EulerRotation operator-(const EulerRotation &a,
                                  const EulerRotation &b) {

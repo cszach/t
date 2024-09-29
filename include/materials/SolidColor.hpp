@@ -6,13 +6,13 @@
 namespace t {
 
 /**
- * A material that appears in one single color and unaffected by lights.
+ * A material that appears in one single color and is unaffected by lights.
  *
  * \ingroup materials
  */
 class SolidColor : public Material {
 public:
-  Color color; /**< The color of the material. */
+  Color color; /**< The color of this material. */
 
   ~SolidColor() override = default;
 

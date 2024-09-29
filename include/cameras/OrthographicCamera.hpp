@@ -6,14 +6,14 @@
 namespace t {
 
 /**
- * A camera that uses [orthographic
- * projection](https://en.wikipedia.org/wiki/Orthographic_projection).
+ * The [orthographic
+projection](https://en.wikipedia.org/wiki/Orthographic_projection) camera.
  *
  * A typical orthographic camera instantiation might look like the following:
  *
 ```cpp
 const auto camera = OrthographicCamera(width / -2, width / 2, height / 2, height
-/ -2, 0.1, 2000 );
+    / -2, 0.1, 2000 );
 ```
  * …where `width` and `height` are the output image's width and height.
  *

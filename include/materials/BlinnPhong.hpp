@@ -14,18 +14,18 @@ namespace t {
  */
 class BlinnPhong : public Material {
 public:
-  Color diffuseColor;  /**< The base color of the material. */
+  Color diffuseColor;  /**< The base color of this material. */
   Color specularColor; /**< The color of the specular highlight. */
-  double shininess;    /**< The shininess constant of the material. */
+  double shininess;    /**< The shininess constant of this material. */
 
   /**
    * Creates a new shiny material with the specified diffuse color, specular
    * color, and shininess.
    *
-   * @param _diffuseColor The base color of the material.
+   * @param _diffuseColor The base color of the new material.
    * @param _specularColor The color of the specular highlight.
-   * @param _shininess The shininess constant of the material. Higher values are
-   * for smoother and more mirror-like surfaces.
+   * @param _shininess The shininess constant of the new material. Higher values
+   * are for smoother and more mirror-like surfaces.
    */
   BlinnPhong(Color _diffuseColor, Color _specularColor, double _shininess)
       : diffuseColor(_diffuseColor), specularColor(_specularColor),
