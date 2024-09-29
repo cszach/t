@@ -67,6 +67,12 @@ int main() {
 
 ## Getting started
 
+Clone:
+
+```
+git clone https://github.com/cszach/t.git
+```
+
 Compile:
 
 ```
@@ -104,7 +110,7 @@ For all demos, please make sure your terminal is at least 80 cells wide and 24
 cells high. You can go into the source code and change the `width` and `height`
 values.
 
-## Spec
+## Specification
 
 ### Primitives
 
@@ -136,7 +142,6 @@ values.
 - Spot light
 - Shadows
 - OBJ import
-- Documentation
 - Post-processing
 - Better name?
 
@@ -144,7 +149,6 @@ values.
 
 - The camera's `lookAt`'s target is currently hard-coded to the zero vector.
 - The x-axis in the render target appears to be flipped.
-- Blinn-Phong shading looks incorrect.
 - Camera's near and far values are currently ignored.
 
 ### Will not be worked on
