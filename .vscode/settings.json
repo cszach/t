@@ -72,5 +72,14 @@
     "semaphore": "cpp",
     "stop_token": "cpp",
     "thread": "cpp"
-  }
+  },
+  "conventionalCommits.scopes": [
+    "cameras",
+    "geometries",
+    "lights",
+    "materials",
+    "math",
+    "primitives",
+    "renderers"
+  ]
 }
