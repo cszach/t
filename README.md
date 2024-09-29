@@ -2,9 +2,11 @@
 
 A software graphics library written in C++, originally for the terminal.
 
+For example, rendering the original Utah teapot (triangulated at 3488 tris) in
+125 FPS:
+
 ![A GIF of a rotating teapot in the terminal](img/teapot.gif)
 
-_Rendering the original Utah teapot (triangulated at 3488 tris) in 125 FPS._
 
 ## 💻 Example
 
