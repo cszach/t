@@ -32,6 +32,8 @@ namespace t {
  *
  * On creation, the plane is centered on the origin and faces towards the
  * positive Z direction.
+ *
+ * \ingroup geometries
  */
 class Plane : public Geometry {
 public:

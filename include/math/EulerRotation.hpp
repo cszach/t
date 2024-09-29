@@ -12,6 +12,8 @@ namespace t {
  * An Euler rotation is represented by 3 rotations about the local X, Y, and Z
  * axes, executed in a certain order. Note that if the 3 rotations are the same
  * but the execution order is different, we might get a different rotation.
+ *
+ * \ingroup math
  */
 class EulerRotation {
 public:

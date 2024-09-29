@@ -13,6 +13,8 @@ namespace t {
  *
  * Uniforms are values that are constant for all vertices and fragments in a
  * single draw call.
+ *
+ * \ingroup primitives
  */
 struct Uniforms {
   Matrix4x4 &modelMatrix;     /**< The model matrix of the current 3D mesh. */

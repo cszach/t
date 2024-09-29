@@ -12,6 +12,8 @@ namespace t {
  * The triangular 3D mesh class.
  *
  * A mesh has a shape (geometry) and a look (material).
+ *
+ * \ingroup primitives
  */
 class Mesh : public Object3D {
 public:

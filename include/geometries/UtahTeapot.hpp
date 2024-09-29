@@ -10482,6 +10482,8 @@ namespace t {
  * Note that the original Utah teapot has no bottom. The data was taken from
  * [the official Utah Model
  * Repository](https://users.cs.utah.edu/~dejohnso/models/teapot.html).
+ *
+ * \ingroup geometries
  */
 class UtahTeapot : public Geometry {
 public:

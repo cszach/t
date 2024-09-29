@@ -8,6 +8,8 @@ namespace t {
 /**
  * The attributes of a vertex, available to {@linkplain Material#vertexShader
  * vertex shaders}.
+ *
+ * \ingroup primitives
  */
 struct Attributes {
   Vector3 &localPosition; /**< The local position of the current vertex. */

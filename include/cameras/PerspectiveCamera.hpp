@@ -32,6 +32,8 @@ namespace t {
  * …where \f$a\f$, \f$v\f$, \f$f\f$, and \f$n\f$ are the aspect ratio, vertical
  * field-of-view in radians, far plane, and near plane of the camera
  * respectively and define the camera's view frustum.
+ *
+ * \ingroup cameras
  */
 class PerspectiveCamera : public Camera {
 public:

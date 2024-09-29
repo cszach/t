@@ -10,6 +10,8 @@ namespace t {
  *
  * A fragment contains data generated during the rasterization process for each
  * pixel that a primitive (e.g. triangle) covers.
+ *
+ * \ingroup primitives
  */
 struct Fragment {
   int x; /**< The x coordinate of the fragment in screen space. */

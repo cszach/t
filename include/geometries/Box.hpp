@@ -86,6 +86,8 @@ namespace t {
  * The geometry of a cuboid (box).
  *
  * On creation, the box is centered on the origin and is axis-aligned.
+ *
+ * \ingroup geometries
  */
 class Box : public Geometry {
 public:

@@ -12,6 +12,8 @@ namespace t {
  * The class inherits from {@link Vector3} and the x, y, and z components map to
  * the **normalized** red, green, and blue components of the color,
  * respectively.
+ *
+ * \ingroup primitives
  */
 class Color : public Vector3 {
 public:

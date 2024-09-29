@@ -16,6 +16,8 @@ namespace t {
  * the 3D object's color multiplied by the light's intensity multiplied by the
  * sum of the specular and diffuse components (which do not rely on the light's
  * intensity). The light's intensity is unitless.
+ *
+ * \ingroup lights
  */
 class PointLight : public Light {
 public:

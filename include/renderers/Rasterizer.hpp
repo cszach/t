@@ -19,6 +19,8 @@ namespace t {
  *
  * The renderer uses rasterization and forward rendering, and renders one object
  * at a time.
+ *
+ * \ingroup renderers
  */
 class Rasterizer {
 public:

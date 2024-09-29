@@ -31,6 +31,8 @@ const auto camera = OrthographicCamera(width / -2, width / 2, height / 2, height
  * …where \f$r\f$, \f$l\f$, \f$t\f$, \f$b\f$, \f$f\f$, \f$n\f$ are the right,
  * left, top, bottom, far, and near planes of the camera's view frustum,
  * respectively.
+ *
+ * \ingroup cameras
  */
 class OrthographicCamera : public Camera {
 public:

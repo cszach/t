@@ -20,6 +20,8 @@ namespace t {
  * - \f$c_{o}\f$ is the {@linkplain BlinnPhong#color material's color};
  * - \f$c_{l}\f$ is {@linkplain #color the color of the ambient light};
  * - \f$s\f$ is {@linkplain #intensity the intensity of the ambient light}.
+ *
+ * \ingroup lights
  */
 class AmbientLight : public Light {
 public:

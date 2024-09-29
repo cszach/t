@@ -32,6 +32,8 @@ auto triangleGeometry = Geometry(vertexPositions, vertexNormals);
  * In the above example, the triangle has 3 vertices at \f$(0, 1, 0), (-1, 0,
 0), (1, 0, 0)\f$. All 3 vertex normals point towards the positive Z direction
  * on creation.
+ *
+ * \ingroup geometries
  */
 class Geometry {
 public:

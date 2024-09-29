@@ -29,6 +29,8 @@ namespace t {
 
 /**
  * A class representing \f$4 \times 4\f$ matrices.
+ *
+ * \ingroup math
  */
 class Matrix4x4 {
 public:
@@ -497,14 +499,14 @@ public:
   }
 
   /**
-   * Returns whether this matrix is equal to another \f$4 \times 4\f$ matrix.
+   * Returns whether two \f$4 \times 4\f$ matrices are equal.
    *
    * Two matrices are equal if they have the same size and all their
    * corresponding elements are equal.
    *
    * @param a A \f$4 \times 4\f$ matrix.
    * @param b Another \f$4 \times 4\f$ matrix.
-   * @returns Whether `a` is equal to `b`.
+   * @returns `true` if `a` is equal to `b`, `false` otherwise.
    */
   friend bool operator==(const Matrix4x4 &a, const Matrix4x4 &b) = default;
 

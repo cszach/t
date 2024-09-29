@@ -14,6 +14,8 @@ namespace t {
  * A 3D vector is a triplet of numbers labeled x, y, and z which can be used to
  * represent a number of things e.g. 3D coordinates, Euler angles, RGB colors,
  * etc.
+ *
+ * \ingroup math
  */
 class Vector3 {
 public:
@@ -356,6 +358,13 @@ public:
   }
 
   /**
+   * Returns whether if two 3D vectors are equal.
+   *
+   * @returns `true` if the two vectors are equal, `false` otherwise.
+   */
+  friend bool operator==(const Vector3 &a, const Vector3 &b) = default;
+
+  /**
    * Returns the negation of this 3D vector.
    *
    * @returns The negation of this 3D vector.
@@ -432,7 +441,8 @@ public:
 
   /**
    * Returns the element-wise product of two 3D vectors, also known as the
-   * [Hadamard product](https://en.wikipedia.org/wiki/Hadamard_product_(matrices)).
+   * [Hadamard
+   * product](https://en.wikipedia.org/wiki/Hadamard_product_(matrices)).
    *
    * @param a A 3D vector.
    * @param b Another 3D vector.

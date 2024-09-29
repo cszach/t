@@ -18,6 +18,8 @@ namespace t {
 
 /**
  * A class representing \f$3 \times 3\f$ matrices.
+ *
+ * \ingroup math
  */
 class Matrix3x3 {
 public:

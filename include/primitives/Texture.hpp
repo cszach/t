@@ -11,6 +11,8 @@ namespace t {
  *
  * A texture is an image that can be used for any purpose, such as a render
  * target, a texture map, a depth map, etc.
+ *
+ * \ingroup primitives
  */
 template <class BufferType> class Texture {
 public:

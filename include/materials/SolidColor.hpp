@@ -7,6 +7,8 @@ namespace t {
 
 /**
  * A material that appears in one single color and unaffected by lights.
+ *
+ * \ingroup materials
  */
 class SolidColor : public Material {
 public:

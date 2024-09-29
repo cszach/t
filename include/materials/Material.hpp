@@ -18,6 +18,8 @@ namespace t {
  * This class must not be instantiated directly. Instead, you can create your
  * own material by deriving from this class and implement your own {@link
  * #vertexShader} and {@link #fragmentShader}.
+ *
+ * \ingroup materials
  */
 class Material {
 public:

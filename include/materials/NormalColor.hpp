@@ -7,6 +7,8 @@ namespace t {
 
 /**
  * A material that maps the mesh's normal vectors to normalized RGB colors.
+ *
+ * \ingroup materials
  */
 class NormalColor : public Material {
 public:

@@ -18,6 +18,8 @@ namespace t {
  * Mesh meshes} and groups of meshes. {@linkplain Scene Scenes}, {@linkplain
  * Camera cameras}, and {@linkplain Light lights} are special types of 3D
  * objects.
+ *
+ * \ingroup primitives
  */
 class Object3D {
 public:
@@ -162,6 +164,8 @@ public:
     return *this;
   }
 };
+
+using Group = Object3D;
 
 } // namespace t
 

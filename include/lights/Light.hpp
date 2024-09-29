@@ -11,6 +11,8 @@ namespace t {
  * This class should not be used directly. Use a {@link PointLight} or
  * {@link AmbientLight} instead, or create your own light by deriving from this
  * class.
+ *
+ * \ingroup lights
  */
 class Light : public Object3D {
 public:

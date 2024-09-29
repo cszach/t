@@ -9,6 +9,8 @@ namespace t {
 /**
  * A shiny material that uses the [Blinn-Phong reflection
  * model](https://en.wikipedia.org/wiki/Blinn%E2%80%93Phong_reflection_model).
+ *
+ * \ingroup materials
  */
 class BlinnPhong : public Material {
 public:

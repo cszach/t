@@ -12,6 +12,8 @@ namespace t {
  *
  * The scene is the container for all 3D objects in a scene. In the 3D scene
  * graph, the scene is the root node.
+ *
+ * \ingroup primitives
  */
 class Scene : public Object3D {};
 

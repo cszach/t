@@ -21,6 +21,8 @@ namespace t {
  * the vertices of the faces of a mesh;
  * - the vertex normals attribute (a.k.a. the normal buffer) stores the vertex
  * normals of a mesh.
+ *
+ * \ingroup primitives
  */
 template <class BufferType> class BufferAttribute {
 public:

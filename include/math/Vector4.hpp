@@ -14,6 +14,8 @@ namespace t {
  * A 4D vector is a triplet of numbers labeled x, y, z, and w which can be used
  * to represent a number of things e.g. 4D homogeneous coordinates, RGBA colors,
  * etc.
+ *
+ * \ingroup math
  */
 class Vector4 {
 public:
@@ -335,11 +337,18 @@ public:
   }
 
   /**
+   * Returns whether if two 4D vectors are equal.
+   *
+   * @returns `true` if the two vectors are equal, `false` otherwise.
+   */
+  friend bool operator==(const Vector4 &a, const Vector4 &b) = default;
+
+  /**
    * Returns the negation of this 4D vector.
    *
    * @returns The negation of this 4D vector.
    */
-  friend Vector3 operator-(const Vector3 &a) { return a * -1; }
+  friend Vector4 operator-(const Vector4 &a) { return a * -1; }
 
   /**
    * Adds two 4D vectors.
@@ -411,7 +420,8 @@ public:
 
   /**
    * Returns the element-wise product of two 4D vectors, also known as the
-   * [Hadamard product](https://en.wikipedia.org/wiki/Hadamard_product_(matrices)).
+   * [Hadamard
+   * product](https://en.wikipedia.org/wiki/Hadamard_product_(matrices)).
    *
    * @param a A 4D vector.
    * @param b Another 4D vector.

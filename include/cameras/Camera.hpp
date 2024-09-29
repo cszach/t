@@ -20,6 +20,8 @@ namespace t {
  * the {@link Rasterizer} use the less-than-or-equal-to comparison when
  * performing the depth test. This implies that higher Z values are further away
  * from the camera.
+ *
+ * \ingroup cameras
  */
 class Camera : public Object3D {
 public:

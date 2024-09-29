@@ -13,6 +13,8 @@ namespace t {
  * call.
  *
  * @see Fragment
+ *
+ * \ingroup primitives
  */
 struct Varyings {
   Vector3 &localPosition; /**< The position in local space associateed with the
