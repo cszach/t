@@ -1,11 +1,19 @@
 #include "math/Vector3.hpp"
 #include <vector>
 
+/**
+ * \file algorithms.hpp
+ * Contains various algorithms.
+ */
+
 #ifndef ALGORITHMS_HPP
 #define ALGORITHMS_HPP
 
 namespace t {
 
+/**
+ * Used internally by {@link #bresenham}.
+ */
 std::vector<std::pair<int, int>> bresenhamLow(int x0, int y0, int x1, int y1) {
   int dx = x1 - x0;
   int dy = y1 - y0;
@@ -33,6 +41,9 @@ std::vector<std::pair<int, int>> bresenhamLow(int x0, int y0, int x1, int y1) {
   return points;
 }
 
+/**
+ * Used internally by {@link #bresenham}.
+ */
 std::vector<std::pair<int, int>> bresenhamHigh(int x0, int y0, int x1, int y1) {
   int dx = x1 - x0;
   int dy = y1 - y0;
@@ -60,6 +71,19 @@ std::vector<std::pair<int, int>> bresenhamHigh(int x0, int y0, int x1, int y1) {
   return points;
 }
 
+/**
+ * Computes and returns the points of a line using the [Bresenham's line
+ * algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm).
+ *
+ * This implementation of the algorithm only uses integer arithmetic. As such,
+ * the input coordinates are expected to be integers.
+ *
+ * @param x0 The x-coordinate of the first point.
+ * @param y0 The y-coordinate of the first point.
+ * @param x1 The x-coordinate of the second point.
+ * @param y1 The y-coordinate of the second point.
+ * @returns The list of points returned by the Bresenham's line algorithm.
+ */
 std::vector<std::pair<int, int>> bresenham(int x0, int y0, int x1, int y1) {
   if (std::abs(y1 - y0) < std::abs(x1 - x0)) {
     if (x0 > x1) {
@@ -76,6 +100,15 @@ std::vector<std::pair<int, int>> bresenham(int x0, int y0, int x1, int y1) {
   }
 }
 
+/**
+ * Computes and returns the barycentric coordinates of a point in a triangle.
+ *
+ * @param point The point to compute the barycentric coordinates of.
+ * @param vertexA The first vertex of the triangle.
+ * @param vertexB The second vertex of the triangle.
+ * @param vertexC The third vertex of the triangle.
+ * @returns The barycentric coordinates of the point.
+ */
 Vector3 barycentric(Vector3 point, Vector3 vertexA, Vector3 vertexB,
                     Vector3 vertexC) {
   Vector3 edgeAB = vertexB - vertexA;

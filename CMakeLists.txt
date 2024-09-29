@@ -43,6 +43,9 @@ target_link_libraries(cornell_box PUBLIC t)
 add_executable(teapot src/teapot.cpp)
 target_link_libraries(teapot PUBLIC t)
 
+add_executable(triangle src/triangle.cpp)
+target_link_libraries(triangle PUBLIC t)
+
 # GoogleTest
 
 include(FetchContent)

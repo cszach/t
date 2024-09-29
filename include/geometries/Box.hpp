@@ -82,8 +82,25 @@ namespace t {
 }
 // clang-format on
 
+/**
+ * The geometry of a cuboid (box).
+ *
+ * On creation, the box is centered on the origin and is axis-aligned.
+ *
+ * \ingroup geometries
+ */
 class Box : public Geometry {
 public:
+  /**
+   * Creates a new box geometry with the specified width, height, and depth.
+   *
+   * For lighting calculations, it may be assumed that the width, height, and
+   * depth are in meters.
+   *
+   * @param width The width of the box.
+   * @param height The height of the box.
+   * @param depth The depth of the box.
+   */
   Box(double width, double height, double depth)
       : Geometry(BufferAttribute<double>(vertexBuffer, 3),
                  BufferAttribute<double>(normalBuffer, 3)) {

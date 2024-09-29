@@ -27,8 +27,26 @@ namespace t {
 #define indexBuffer {0, 1, 3, 3, 1, 2}
 #define normalBuffer {0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1}
 
+/**
+ * The geometry of a flat, depth-less plane.
+ *
+ * On creation, the plane is centered on the origin and faces towards the
+ * positive Z direction.
+ *
+ * \ingroup geometries
+ */
 class Plane : public Geometry {
 public:
+  /**
+   * Creates a new plane geometry with the specified width and height centered
+   * on the origin and faces towards the positive Z direction.
+   *
+   * For lighting calculations, it may be assumed that the width and height are
+   * in meters.
+   *
+   * @param width The width of the plane.
+   * @param height The height of the plane.
+   */
   Plane(double width, double height)
       : Geometry(BufferAttribute<double>(vertexBuffer, 3),
                  BufferAttribute<double>(normalBuffer, 3)) {

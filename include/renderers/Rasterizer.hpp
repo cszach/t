@@ -14,8 +14,23 @@
 
 namespace t {
 
+/**
+ * The most basic renderer that renders your beautiful 3D scene.
+ *
+ * The renderer uses rasterization and forward rendering, and renders one object
+ * at a time.
+ *
+ * \ingroup renderers
+ */
 class Rasterizer {
 public:
+  /**
+   * Renders the given scene using the given camera to the given render target.
+   *
+   * @param scene The scene to render.
+   * @param camera The camera to render the scene with a.k.a. the active camera.
+   * @param renderTarget The render target i.e. texture to render the scene to.
+   */
   template <class BufferType>
   void render(Scene &scene, Camera &camera,
               RenderTarget<BufferType> &renderTarget) {
@@ -106,13 +121,7 @@ public:
       auto geometry = mesh.geometry;
       auto modelViewMatrix = viewMatrix * mesh.modelMatrix;
       auto normalMatrix =
-          Matrix3x3(modelViewMatrix.elements[0], modelViewMatrix.elements[1],
-                    modelViewMatrix.elements[2], modelViewMatrix.elements[4],
-                    modelViewMatrix.elements[5], modelViewMatrix.elements[6],
-                    modelViewMatrix.elements[8], modelViewMatrix.elements[9],
-                    modelViewMatrix.elements[10])
-              .inverse()
-              .transpose();
+          mesh.modelMatrix.topLeft3x3Matrix().inverse().transpose();
 
       if (geometry.faceIndices) {
         for (int i = 0; i < geometry.faceIndices.value().array.size(); i += 3) {

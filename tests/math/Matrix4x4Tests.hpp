@@ -116,8 +116,20 @@ TEST(Matrix4x4Tests, Inverse) {
       t::Matrix4x4(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
   const auto degenerateInverse = degenerate.inverse();
 
-  for (int i = 0; i < 16; i++) {
+  for (int j = 0; j < 16; j++) {
     EXPECT_DOUBLE_EQ(degenerateInverse[0], 0);
+  }
+}
+
+TEST(Matrix4x4Tests, TopLeft3x3Matrix) {
+  const auto m =
+      t::Matrix4x4(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
+  const auto t = m.topLeft3x3Matrix();
+
+  for (int row = 0; row < 3; row++) {
+    for (int column = 0; column < 3; column++) {
+      EXPECT_DOUBLE_EQ(t.get(row, column), row * 4 + column + 1);
+    }
   }
 }
 

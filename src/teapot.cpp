@@ -12,10 +12,10 @@ int main() {
 
   mesh.translate(0, -1.3, 0);
 
-  const auto width = 80;
-  const auto height = 24;
-  // const auto width = 213;
-  // const auto height = 56;
+  // const auto width = 80;
+  // const auto height = 24;
+  const auto width = 213;
+  const auto height = 56;
   const auto fwidth = static_cast<double>(width);
   const auto fheight = static_cast<double>(height);
 
