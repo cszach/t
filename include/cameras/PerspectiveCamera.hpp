@@ -1,3 +1,4 @@
+#define __USE_MATH_DEFINES
 #include "cameras/Camera.hpp"
 #include <cmath>
 

@@ -1,3 +1,4 @@
+#define __USE_MATH_DEFINES
 #include "materials/Material.hpp"
 #include <cmath>
 

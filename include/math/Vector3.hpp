@@ -1,3 +1,4 @@
+#define __USE_MATH_DEFINES
 #include "primitives/BufferAttribute.hpp"
 #include <algorithm>
 #include <cmath>

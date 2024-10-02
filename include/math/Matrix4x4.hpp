@@ -1,3 +1,4 @@
+#define __USE_MATH_DEFINES
 #include "EulerRotation.hpp"
 #include "Matrix3x3.hpp"
 #include "Vector3.hpp"

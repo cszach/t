@@ -1,3 +1,4 @@
+#define __USE_MATH_DEFINES
 #include "cameras/Camera.hpp"
 #include "math/Matrix3x3.hpp"
 #include "primitives/Fragment.hpp"
