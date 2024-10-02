@@ -1,4 +1,3 @@
-#define _USE_MATH_DEFINES
 #include "cameras/Camera.hpp"
 #include "math/Matrix3x3.hpp"
 #include "primitives/Fragment.hpp"
@@ -9,6 +8,10 @@
 #include <functional>
 #include <set>
 #include <stack>
+
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
 
 #ifndef RASTERIZER_HPP
 #define RASTERIZER_HPP
