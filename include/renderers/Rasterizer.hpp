@@ -9,6 +9,10 @@
 #include <set>
 #include <stack>
 
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+
 #ifndef RASTERIZER_HPP
 #define RASTERIZER_HPP
 
